@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('about');
+    return view('index');
 });
+Route::get('about',[AboutController::class,'index'])->name('About.index');
+Route::get('contact',[ContactController::class,'index'])->name('Contact.index');
+Route::get('index',[HomeController::class,'index'])->name('Home.index');
+Route::get('post',[PostsController::class,'index'])->name('Post.index');

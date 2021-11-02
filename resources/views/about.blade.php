@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-
 @section('title', 'Clean Blog- about')
 @extends('layouts.master')
 
 
-<body>
-@section('content')
 
+@section('content')
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../../public/img/about-bg.jpg')">
+  <header class="masthead" style="background-image: url('img/about-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -39,6 +33,4 @@
   <hr>
 @endsection
 
-</body>
 
-</html>
