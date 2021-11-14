@@ -29,12 +29,15 @@ use App\Models\Post;
 //$posts=Post::all();
 //dd($posts);
 
-$post=Post::find(1);
+//$post=Post::find(1);
+//dd($post);
+
+$post=Post::where('id','<',10)->orderBy('id','DESC')->get();
 dd($post);
 
-Route::get('/', function () {
-    return view('index');
-});
+//Route::get('/', function () {
+//    return view('index');
+//});
 Route::get('about',[AboutController::class,'index'])->name('About.index');
 Route::get('contact',[ContactController::class,'index'])->name('Contact.index');
 Route::get('index',[HomeController::class,'index'])->name('Home.index');
