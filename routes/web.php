@@ -22,10 +22,12 @@ use App\Models\Post;
 //$post->content='test content';
 //$post->save();
 
-Post::create([
-    'title' =>'test title',
-    'content' =>'test content',
-]);
+//Post::create([
+//    'title' =>'test title',
+//    'content' =>'test content',
+//]);
+$posts=Post::all();
+dd($posts);
 
 Route::get('/', function () {
     return view('index');
