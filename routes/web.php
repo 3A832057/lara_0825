@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostsController;
 use App\Models\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,12 +63,21 @@ use App\Models\Post;
 //$fourthPost=Post::find(4);
 //dd($fourthPost);
 
-$lastPost=Post::orderBy('id','DESC')->first();
-dd($lastPost);
+//$lastPost=Post::orderBy('id','DESC')->first();
+//dd($lastPost);
 
-Route::get('/', function () {
-    return view('index');
-});
+$post=Post::find(4);
+echo $post->title.'<br>';
+
+foreach($post->comments as $comment){
+    echo $comment->content.'<br>';
+}
+
+
+
+//Route::get('/', function () {
+//    return view('index');
+//});
 Route::get('about',[AboutController::class,'index'])->name('About.index');
 Route::get('contact',[ContactController::class,'index'])->name('Contact.index');
 Route::get('index',[HomeController::class,'index'])->name('Home.index');
