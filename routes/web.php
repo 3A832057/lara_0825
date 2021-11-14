@@ -51,8 +51,19 @@ use App\Models\Post;
 //$post=Post::find(1);
 //$post->delete();
 
-Post::destroy(3,5,7);
+//Post::destroy(3,5,7);
 
+$allPosts=Post::all();
+dd($allPosts);
+
+//$featuredPosts=Post::where('is_feature',1)->get();
+//dd($featuredPosts);
+
+//$fourthPost=Post::find(4);
+//dd($fourthPost);
+
+//$lastPost=Post::orderBy('id','DESC')->first();
+//dd($lastPost);
 
 Route::get('/', function () {
     return view('index');
